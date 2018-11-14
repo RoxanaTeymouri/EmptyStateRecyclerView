@@ -3,17 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green"
+    android:background="@color/white"
     android:gravity="center"
     android:orientation="vertical"
-    android:visibility="gone"
-    >
+    android:visibility="gone">
 
     <ImageView
         android:id="@+id/emptyStateImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_empty"
         tools:background="@color/black"
         tools:ignore="ContentDescription" />
 
@@ -23,8 +23,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/spacing_small"
+        android:text="EmptyMessage"
         android:textColor="@color/grey"
-        tools:text="Empty" />
+        android:textSize="14sp" />
 
 
 </LinearLayout>

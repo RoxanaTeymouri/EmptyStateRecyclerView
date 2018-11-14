@@ -107,9 +107,15 @@ public class EmptyStateRecyclerView extends FrameLayout {
     public void showLoading() {
 
         MaterialProgressWheel materialProgressWheel = loadingView.findViewById(R.id.progressBar);
-        materialProgressWheel.setBarColor(config.loadingLayoutProgressBarColor);
-        materialProgressWheel.setCircleRadius(config.loadingLayoutProgressBarRadius);
-        materialProgressWheel.setBarWidth(config.loadingLayoutProgressBarSpinWidth);
+        if (config.loadingLayoutProgressBarColor != 0) {
+            materialProgressWheel.setBarColor(config.loadingLayoutProgressBarColor);
+        }
+        if (config.loadingLayoutProgressBarRadius != 0) {
+            materialProgressWheel.setCircleRadius(config.loadingLayoutProgressBarRadius);
+        }
+        if (config.loadingLayoutProgressBarSpinWidth != 0) {
+            materialProgressWheel.setBarWidth(config.loadingLayoutProgressBarSpinWidth);
+        }
         loadingView.setVisibility(VISIBLE);
         emptyView.setVisibility(GONE);
         errorView.setVisibility(GONE);
@@ -119,19 +125,37 @@ public class EmptyStateRecyclerView extends FrameLayout {
     public void showError() {
 
         ImageView errorImageView = errorView.findViewById(R.id.errorStateImageView);
-        errorImageView.setImageDrawable(config.errorLayoutDrawable);
-        errorImageView.getLayoutParams().width = config.errorLayoutImageWidth;
-        errorImageView.getLayoutParams().height = config.emptyLayoutImageHeight;
+        if (config.errorLayoutDrawable != null) {
+            errorImageView.setImageDrawable(config.errorLayoutDrawable);
+        }
+        if (config.errorLayoutImageWidth != 0) {
+            errorImageView.getLayoutParams().width = config.errorLayoutImageWidth;
+        }
+        if (config.emptyLayoutImageHeight != 0) {
+            errorImageView.getLayoutParams().height = config.emptyLayoutImageHeight;
+        }
 
         TextView errorTextView = errorView.findViewById(R.id.errorStateContentTextView);
-        errorTextView.setText(config.errorLayoutMessage);
-        errorTextView.setTextColor(config.errorLayoutTextColor);
-        errorTextView.setTextSize(config.errorLayoutTextSize);
+        if (config.errorLayoutMessage != null) {
+            errorTextView.setText(config.errorLayoutMessage);
+        }
+        if (config.errorLayoutTextColor != 0) {
+            errorTextView.setTextColor(config.errorLayoutTextColor);
+        }
+        if (config.errorLayoutTextSize != 0) {
+            errorTextView.setTextSize(config.errorLayoutTextSize);
+        }
 
         Button errorButton = errorView.findViewById(R.id.errorStateButton);
-        errorButton.setText(config.errorLayoutButtonText);
-        errorButton.setTextColor(config.errorLayoutTextSize);
-        errorButton.setTextSize(config.errorLayoutButtonTextSize);
+        if (config.errorLayoutButtonText != null) {
+            errorButton.setText(config.errorLayoutButtonText);
+        }
+        if (config.errorLayoutTextSize != 0) {
+            errorButton.setTextColor(config.errorLayoutTextSize);
+        }
+        if (config.errorLayoutButtonTextSize != 0) {
+            errorButton.setTextSize(config.errorLayoutButtonTextSize);
+        }
 
         errorView.setVisibility(VISIBLE);
         emptyView.setVisibility(GONE);
@@ -142,20 +166,34 @@ public class EmptyStateRecyclerView extends FrameLayout {
         if (adapter.getItemCount() == 0) {
 
             ImageView emptyImageView = emptyView.findViewById(R.id.emptyStateImageView);
-            emptyImageView.getLayoutParams().width = config.emptyLayoutImageWidth;
-            emptyImageView.getLayoutParams().height = config.emptyLayoutImageHeight;
-            emptyImageView.setImageDrawable(config.emptyLayoutDrawable);
+            if (config.emptyLayoutImageWidth != 0) {
+                emptyImageView.getLayoutParams().width = config.emptyLayoutImageWidth;
+            }
+            if (config.emptyLayoutImageHeight != 0) {
+                emptyImageView.getLayoutParams().height = config.emptyLayoutImageHeight;
+            }
+            if (config.emptyLayoutDrawable != null) {
+                emptyImageView.setImageDrawable(config.emptyLayoutDrawable);
+            }
 
             TextView emptyTextView = emptyView.findViewById(R.id.emptyStateTextView);
-            emptyTextView.setTextColor(config.emptyLayoutTextColor);
-            emptyTextView.setTextSize(config.emptyLayoutTextSize);
-            emptyTextView.setText(config.emptyLayoutMessage);
+            if (config.emptyLayoutTextColor != 0) {
+                emptyTextView.setTextColor(config.emptyLayoutTextColor);
+            }
+            if (config.emptyLayoutTextSize != 0) {
+                emptyTextView.setTextSize(config.emptyLayoutTextSize);
+            }
 
+            if (config.emptyLayoutMessage != null) {
+                emptyTextView.setText(config.emptyLayoutMessage);
+            }
             emptyView.setVisibility(VISIBLE);
         }
         adapter.registerAdapterDataObserver(observer);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new
+
+                LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
     }
 

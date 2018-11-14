@@ -13,10 +13,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         EmptyStateRecyclerView emptyStateRecyclerView = findViewById(R.id.recyclerview_main);
 
-//          emptyStateRecyclerView.setAdapter(new SimpleRVAdapter(new String[]{}));
-//
-//          emptyStateRecyclerView.showError();
-          emptyStateRecyclerView.showLoading();
+        emptyStateRecyclerView.setAdapter(new SimpleRVAdapter(new String[]{}));
+        //When you want to use ErrorState add this:
+        emptyStateRecyclerView.showError();
+        //When you want to use Loading add this:
+        emptyStateRecyclerView.showLoading();
 
     }
 }

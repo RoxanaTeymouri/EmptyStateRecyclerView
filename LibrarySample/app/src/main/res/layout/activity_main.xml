@@ -19,21 +19,8 @@
         android:id="@+id/recyclerview_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:emptyDrawable="@drawable/ic_empty_trash"
-        app:emptyImageHeight="20dp"
-        app:emptyImageWidth="20dp"
-        app:emptyMessage="ROxa"
-        app:emptyTextColor="@color/colorAccent"
-        app:emptyTextSize="14sp"
-        app:errorButtonText="errorButRoxa"
-        app:errorButtonTextColor="@color/black"
-        app:errorButtonTextSize="15sp"
-        app:errorDrawable="@drawable/ic_no_connection"
-        app:errorImageHeight="50dp"
-        app:errorImageWidth="30dp"
-        app:errorMessage="errorRoxa"
-        app:errorTextColor="@color/colorAccent"
-        app:errorTextSize="20sp"
+
+
       >
     </com.roxa.emptystatehelper.EmptyStateRecyclerView>
 </android.support.constraint.ConstraintLayout>
