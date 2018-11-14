@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:visibility="gone"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/errorStateImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        tools:background="@color/black"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/errorStateContentTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:gravity="center"
+        android:textColor="@color/grey"
+        tools:text="Error" />
+
+    <Button
+        android:id="@+id/errorStateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:background="@android:color/transparent"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:paddingLeft="@dimen/spacing_large"
+        android:paddingTop="@dimen/spacing_small"
+        android:paddingRight="@dimen/spacing_large"
+        android:paddingBottom="@dimen/spacing_small"
+        android:text="@string/try_again"
+        android:textAllCaps="true"
+        android:textColor="@color/green" />
+
+
+</LinearLayout>
