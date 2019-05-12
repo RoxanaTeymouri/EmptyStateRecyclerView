@@ -6,7 +6,8 @@ EmptyStateRecyclerView is An extension of RecyclerView that helps show loading, 
 ### Gradle
 add this line to your module build.gradle dependecies block:
 
-    compile 'com.roxa.emptystatehelper:1.0.0'
+  implementation 'com.github.RoxanaTeymouri:EmptyStateRecyclerView:1.0.1'
+	
 
 ### Maven
 
